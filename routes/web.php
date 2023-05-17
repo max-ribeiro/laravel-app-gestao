@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return 'Hello World!';
-});
+Route::get('/', [MainController::class, 'main']);
 
-Route::get('/about', function () {
-    return 'Sobre nós!';
-});
+Route::get('/about', [AboutController::class, 'show']);
 
-Route::get('/contact', function () {
-    return 'Contact';
-});
+Route::get('/contact', [ContactController::class, 'show']);
