@@ -22,6 +22,6 @@ Route::get('/about', [AboutController::class, 'show']);
 
 Route::get('/contact', [ContactController::class, 'show']);
 
-Route::get('/contact/{name}/{category_id}', function(string $name, int $category_id = 1) {
-    echo "{$name} - {$category_id}";
-})->where('category_id', '[0-9]+')->where('name', '[a-zA-Z]+');
+// Route::get('/contact/{name}/{category_id}', function(string $name, int $category_id = 1) {
+//     echo "{$name} - {$category_id}";
+// })->where('category_id', '[0-9]+')->where('name', '[a-zA-Z]+');
