@@ -21,3 +21,7 @@ Route::get('/', [MainController::class, 'main']);
 Route::get('/about', [AboutController::class, 'show']);
 
 Route::get('/contact', [ContactController::class, 'show']);
+
+Route::get('/contact/{name}/{category}/{subject}/{message}', function(string $name, string $category, string $subject, string $message) {
+    echo "{$name} - {$category} - {$subject} - {$message}";
+});
