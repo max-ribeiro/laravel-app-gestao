@@ -25,7 +25,7 @@ Route::get('/contact', [ContactController::class, 'show'])->name('site.contact')
 Route::prefix('/app')->group(function() {
     Route::get('/login', function(){
         return 'login';
-    })->name('app.login');
+    })->name('app.login'); 
     Route::get('/customers', function() {
         return 'customers';
     })->name('app.customers');
