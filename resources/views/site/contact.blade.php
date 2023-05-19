@@ -9,7 +9,7 @@
 
     <div class="informacao-pagina">
         <div class="contato-principal">
-            @component('site.components.form_contact')
+            @component('site.components.form_contact', ['class' => 'borda-preta'])
             @endcomponent
         </div>
     </div>
