@@ -7,6 +7,7 @@
     </head>
 
     <body>
+        @include('site.components.top')
         @yield('content')
     </body>
 </html>

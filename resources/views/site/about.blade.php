@@ -1,8 +1,6 @@
 @extends('site.layouts.basic')
 @section('title', $title)
 @section('content')
-@include('site.components.top')
-
 <div class="conteudo-pagina">
     <div class="titulo-pagina">
         <h1>Olá, eu sou o Super Gestão</h1>

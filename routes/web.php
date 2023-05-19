@@ -20,12 +20,13 @@ Route::get('/', [MainController::class, 'main'])->name('site.index');
 Route::get('/about', [AboutController::class, 'show'])->name('site.about');
 
 Route::get('/contact', [ContactController::class, 'show'])->name('site.contact');
+Route::post('/contact', [ContactController::class, 'show'])->name('site.contact');
 
 //app
 Route::prefix('/app')->group(function() {
     Route::get('/login', function(){
         return 'login';
-    })->name('app.login'); 
+    })->name('app.login');
     Route::get('/customers', function() {
         return 'customers';
     })->name('app.customers');
