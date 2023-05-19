@@ -1,7 +1,7 @@
 @extends('site.layouts.basic')
+@section('title', 'Home')
 @section('content')
 <div class="topo">
-
     <div class="logo">
         <img src="{{ asset('img/logo.png') }}">
     </div>
