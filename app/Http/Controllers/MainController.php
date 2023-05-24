@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 class MainController extends Controller
 {
     public function main() {
-        return view('site.main', ['title' => 'Home']);
+        $subjects = [
+            '1' => 'Duvida',
+            '2' => 'Elogio',
+            '3' => 'Reclamação'
+        ];
+
+        return view('site.main', ['title' => 'Home', 'subjects' => $subjects]);
     }
 }

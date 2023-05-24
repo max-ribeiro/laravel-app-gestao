@@ -9,7 +9,7 @@
     <br>
     <select name="subject" class="{{ $class }}">
         @foreach ($subjects as $key => $subject)
-            <option value="{{$key}}" selected="{{old('subject') == $key}}">{{$subject}}</option>
+            <option value="{{$key}}" {{old('subject') == $key ? 'selected' : ''}}>{{$subject}}</option>
         @endforeach
     </select>
     <br>
