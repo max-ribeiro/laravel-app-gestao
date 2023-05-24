@@ -11,7 +11,7 @@
         <option value="1">Qual o motivo do contato?</option>
         <option value="2">Dúvida</option>
         <option value="3">Elogio</option>
-        <option value="4">Reclamação</option>
+        <option value="4">Reclamação!</option>
     </select>
     <br>
     <textarea name="message" class="{{ $class }}">Preencha aqui a sua mensagem</textarea>
