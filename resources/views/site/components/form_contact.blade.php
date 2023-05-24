@@ -1,20 +1,25 @@
 {{ $slot }}
 <form method="POST" action="{{ route('site.contact') }}" >
     @csrf
-    <input type="text" name="name" placeholder="Nome" class="{{ $class }}">
+    <input value="{{old('name')}}" type="text" name="name" placeholder="Nome" class="{{ $class }}">
     <br>
-    <input type="text" name="tel" placeholder="Telefone" class="{{ $class }}">
+    <input value="{{old('tel')}}" type="text" name="tel" placeholder="Telefone" class="{{ $class }}">
     <br>
-    <input type="text" name="email" placeholder="E-mail" class="{{ $class }}">
+    <input value="{{old('email')}}" type="text" name="email" placeholder="E-mail" class="{{ $class }}">
     <br>
     <select name="subject" class="{{ $class }}">
-        <option value="1">Qual o motivo do contato?</option>
-        <option value="2">Dúvida</option>
-        <option value="3">Elogio</option>
-        <option value="4">Reclamação</option>
+        @foreach ($subjects as $key => $subject)
+            <option value="{{$key}}" selected="{{old('subject') == $key}}">{{$subject}}</option>
+        @endforeach
     </select>
     <br>
-    <textarea name="message" class="{{ $class }}">Preencha aqui a sua mensagem</textarea>
+    <textarea name="" class="{{ $class }}">
+        @if(old('message'))
+            {{old('message')}}
+        @else
+            Preencha aqui sua mensagem
+        @endif
+    </textarea>
     <br>
     <button type="submit" class="{{ $class }}">ENVIAR</button>
 </form>
