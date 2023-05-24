@@ -20,7 +20,7 @@ Route::get('/', [MainController::class, 'main'])->name('site.index');
 Route::get('/about', [AboutController::class, 'show'])->name('site.about');
 
 Route::get('/contact', [ContactController::class, 'show'])->name('site.contact');
-Route::post('/contact', [ContactController::class, 'show'])->name('site.contact');
+Route::post('/contact', [ContactController::class, 'save'])->name('site.contact');
 
 //app
 Route::prefix('/app')->group(function() {
