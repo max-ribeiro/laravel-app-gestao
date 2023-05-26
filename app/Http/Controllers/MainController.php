@@ -3,16 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\SubjectContact;
 
 class MainController extends Controller
 {
     public function main() {
-        $subjects = [
-            '1' => 'Duvida',
-            '2' => 'Elogio',
-            '3' => 'Reclamação'
-        ];
-
+        $subjects = SubjectContact::all();
         return view('site.main', ['title' => 'Home', 'subjects' => $subjects]);
     }
 }
