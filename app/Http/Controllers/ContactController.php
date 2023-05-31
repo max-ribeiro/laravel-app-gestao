@@ -4,15 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\SiteContact;
+use App\Models\SubjectContact;
 
 class ContactController extends Controller
 {
     public function show() {
-        $subjects = [
-            '1' => 'Duvida',
-            '2' => 'Elogio',
-            '3' => 'Reclamação'
-        ];
+        $subjects = SubjectContact::all();
 
         return view('site.contact', [
             'title' => 'Contato',
