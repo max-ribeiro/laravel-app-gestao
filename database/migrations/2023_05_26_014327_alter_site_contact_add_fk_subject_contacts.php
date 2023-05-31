@@ -20,11 +20,11 @@ class AlterSiteContactAddFkSubjectContacts extends Migration
             $table->unsignedBigInteger('subject_contact_id');
         });
 
-        DB::statement('UPDATE site_contacts set subject_contact_id = subject_contact');
+        DB::statement('UPDATE site_contacts set subject_contact_id = subject');
 
         Schema::table('site_contacts', function(Blueprint $table) {
             $table->foreign('subject_contact_id')->references('id')->on('subject_contacts');
-            $table->dropColumn('subject_contact');
+            $table->dropColumn('subject');
         });
     }
 
@@ -37,11 +37,11 @@ class AlterSiteContactAddFkSubjectContacts extends Migration
     {
         //
         Schema::table('site_contacts', function(Blueprint $table) {
-            $table->string('subject_contact', 20);
+            $table->integer('subject');
             $table->dropForeign('site_contact_subject_contact_id');
         });
 
-        DB::statement('UPDATE site_contacts set subject_contact = subject_contact_id');
+        DB::statement('UPDATE site_contacts set subject = subject_contact_id');
 
         Schema::table('site_contacts', function(Blueprint $table) {
             $table->dropColumn('site_contact_id');

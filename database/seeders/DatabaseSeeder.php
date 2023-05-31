@@ -16,6 +16,6 @@ class DatabaseSeeder extends Seeder
         // \App\Models\Suppliers::factory(10)->create();
         // $this->call(SupplierSeeder::class);
         // $this->call(SiteContactSeeder::class);
-        $this->call(SubjectContactSeeder::class);
+        // $this->call(SubjectContactSeeder::class);
     }
 }
