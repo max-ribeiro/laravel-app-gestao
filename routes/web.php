@@ -3,7 +3,6 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MainController;
-use App\Http\Middleware\AccessLogMiddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [MainController::class, 'main'])->name('site.index')->middleware(AccessLogMiddleware::class);
+Route::get('/', [MainController::class, 'main'])->name('site.index');
 
 Route::get('/about', [AboutController::class, 'show'])->name('site.about');
 
