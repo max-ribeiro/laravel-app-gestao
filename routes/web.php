@@ -29,7 +29,7 @@ Route::prefix('/app')->group(function() {
     })->name('app.login');
     Route::get('/customers', function() {
         return 'customers';
-    })->name('app.customers');
+    })->name('app.customers')->middleware(['access.log','authentication']);
     Route::get('/suppliers', function() {
         return 'suppliers';
     })->name('app.suppliers');
